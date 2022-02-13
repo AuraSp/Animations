@@ -1,0 +1,244 @@
+body {
+background-image: url(../img/background.jpg);
+background-position:fixed;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.header {
+  height: 5em;
+  border-bottom: 2px groove;
+  border-color:rgb(116, 99, 2);
+  margin-bottom:10px;
+}
+
+ul.list {
+    position: absolute;
+    top: 9%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+  ul.list li {
+    display: inline-block;
+    margin: 0 3px 9px;
+  }
+  ul.list li a.draw-border {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    color: #fff;
+    font-family: 'Roboto Slab', serif;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 40px;
+  }
+  ul.list li a.draw-border .icon {
+    position: relative;
+    z-index: 2;
+  }
+  ul.list li a.draw-border .circle:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    background: #1f1f1f;
+  }
+  ul.list li a.draw-border .circle span {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+  }
+  ul.list li a.draw-border .circle span em {
+    position: absolute;
+    border-radius: 999px;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transition: transform 0.25s linear;
+  }
+      ul.list li a.draw-border .circle span:first-child {
+      left: 0%;
+    }
+    ul.list li a.draw-border .circle span:first-child em {
+      left: 100%;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      transform-origin: 0% 50%;
+    }
+    ul.list li a.draw-border .circle span:last-child {
+      left: 50%;
+    }
+    ul.list li a.draw-border .circle span:last-child em {
+      left: -100%;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      transform-origin: 100% 50%;
+      transition-delay: .25s;
+    }
+    ul.list li a.draw-border:hover .circle span:first-child em {
+      transform: rotate(-180deg);
+      transition: transform 0.5s ease-out;
+      transition-delay: .25s;
+    }
+    ul.list li a.draw-border:hover .circle span:last-child em {
+      transform: rotate(-180deg);
+      transition: transform .25s linear;
+    }
+ 
+.span {
+    font-size: 30px;
+    cursor: pointer;
+    color:white;
+    position: relative;
+    top:25%;
+    margin-left:2%;
+} 
+.span:hover {
+background-color: #1f1f1f;
+border-radius:10%;
+border: 2px solid;
+font-variant: small-caps;
+animation-name: menu;
+animation-duration: 7s;
+animation-fill-mode: none;
+animation-iteration-count: infinite;
+}
+@keyframes menu {
+  0% {
+    background-color: #1f1f1f;
+  }
+  25% {
+    background-color: #29295c;
+  }
+  50% {
+    background-color: #0b0b53;
+  }
+  55% {
+    background-color: #0b0b53;
+  }
+  70% {
+    background-color: #29295c;
+  }
+  100% {
+    background-color: #1f1f1f;
+  }
+}
+
+.sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        opacity: 0.9;
+        transition: 0.5s;
+        padding-top: 60px;
+        text-align:center;
+}  
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    transition: 0.4s;
+}
+.sidenav a:hover{
+text-decoration-line: underline;
+color: #610000;
+}
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+.flex {
+  display:flex;
+  flex-flow: row;
+  justify-content: space-around;
+}
+img {
+  width: 10em;
+  height: 10em;
+}
+.border {
+  border-bottom: 2px groove;
+  border-color:rgb(116, 99, 2);
+  margin-bottom:10px;
+  margin-top:10px;
+}
+.glow {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.glow .glow2 {
+  list-style: none;
+  margin: 0 15px;
+}
+
+.glow .glow2 a {
+  position: relative; 
+  display: block;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 63px;
+  background: #333;
+  border-radius: 50%;
+  font-size: 30px;
+  color: #666;
+  transition: .7s;
+}
+
+.glow .glow2 a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #ffee10;
+  transition: .6s;
+  transform: scale(.9);
+  z-index: -1;
+}
+
+.glow .glow2 :hover::before {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ffee10;
+}
+
+.glow .glow2 a:hover {
+  color: #ffee10;
+  box-shadow: 0 0 5px #ffee10;
+  text-shadow: 0 0 5px #ffee10;
+}
+footer {
+  height: 4em;
+}

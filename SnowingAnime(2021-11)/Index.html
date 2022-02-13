@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="Styles/css.css">
+    <script src='https://kit.fontawesome.com/0b97970022.js' crossorigin='anonymous'></script>
+    <title>Animation | CSS, JS</title>
+</head>
+
+<body>
+
+    <div class='video'>
+        <video id="background-video" autoplay loop muted>
+            <source src="./Videos/snowGlobe.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <section></section>
+
+    <script>
+        function starts() {
+            /* krentančių snaigių kiekis per vieną animaciją */
+            const snowflakesCount = 600;
+            const fallingArea = document.querySelector('section');
+            var i = 0;
+
+            while (i < snowflakesCount) {
+                const snowflakes = document.createElement('snow');
+                /* snaigių išsklaidymas per visą puslapį */
+                const width = Math.floor(Math.random() * window.innerWidth);
+                const height = Math.floor(Math.random() * window.innerHeight);
+
+                /* pridedami matmenys snaigių išsklaidymui */
+                snowflakes.style.left = width + 'px';
+                snowflakes.style.top = height + 'px';
+                snowflakes.style.width = Math.random() + 'px';
+                snowflakes.style.height = Math.random() + 'px';
+                /* nustatomi snaigių animacijos parametrai */
+                /* animacija */
+                snowflakes.style.animationDuration = 2 + Math.random() + 's';
+                /* įdedamos snaigės į 'section' zoną */
+                fallingArea.appendChild(snowflakes);
+                i++;
+            }
+        }
+        /* funkcijos aktyvinimas */
+        starts();
+    </script>
+</body>
+
+</html>
